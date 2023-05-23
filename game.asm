@@ -1,5 +1,3 @@
-SECTION .text
-
 ORG 150h
 LD A, $80
 LD ($FF40), A
