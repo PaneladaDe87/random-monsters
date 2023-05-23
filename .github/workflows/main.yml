@@ -18,10 +18,10 @@ jobs:
         run: sudo apt-get install z80asm
 
       - name: Assemble Z80 Code
-        run: z80asm -b game.asm -o game.bin
+        run: z80asm -b game.asm -o game.gbc
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: Game Binary
-          path: game.bin
+          name: game
+          path: game.gbc
