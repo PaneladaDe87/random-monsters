@@ -12,19 +12,20 @@ CONDICTION:
 LOADING:
     ADD A, 1         ; adiciona mais 1 ao registrador A
     
+    CALL PRINT
+    
     RET              ; retorna o ponto de chamada(START) para fazer a porra do loop de novo
 
-LOL:
-    LD HL, MESSAGE   ; mensagem a ser imprimida
-    CALL PRINT       ; ooooooooooomaaaagawd
-    
 PRINT:
+    LD HL, MESSAGE   ; mensagem a ser imprimida
+    
+LOOP:
     LD A, (HL)       ; a zoeira não para lol
     OR A             ; hehehehaw
     JP Z, END        ; fim
     
     INC HL
-    JP IMPRIMIR
+    JP LOOP
     
 END:
     RET              ; coolswag
