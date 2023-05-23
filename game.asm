@@ -1,4 +1,4 @@
-ORG 100h
+ORG 150h
 
 START:
     LD A, 1
