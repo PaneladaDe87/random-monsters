@@ -4,7 +4,7 @@ START:
     LD A, 1
     CALL LOADING     ; chame a subrotina LOADING
     
-    JMP START        ; volta para a rotina principal
+    JP START        ; volta para a rotina principal
     
 LOADING:
     ADD A, 1         ; adiciona mais 1 ao registrador A
