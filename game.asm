@@ -28,4 +28,4 @@ END:
     RET              ; coolswag
     
 MESSAGE:
-    DB "AMOGUS", 0   ; termina com 0 porque sim
+    DB 'AMOGUS', 0   ; termina com 0 porque sim
