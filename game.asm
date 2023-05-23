@@ -6,9 +6,6 @@ START:
     
     JMP START        ; volta para a rotina principal
     
-CONDICTION:
-    JP LOL           ; para evitar bugs e executar tudo certo
-    
 LOADING:
     ADD A, 1         ; adiciona mais 1 ao registrador A
     
