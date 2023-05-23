@@ -1,0 +1,16 @@
+SECTION .text
+
+ORG 150h
+LD A, $80
+LD ($FF40), A
+
+LD HL, $8000
+LD DE, $FFFF
+
+LD BC, $4000
+LDIR
+
+MAIN_LOOP:
+    JR MAIN_LOOP
+    
+    END
