@@ -1,16 +1,12 @@
-ORG 100h   ; Endereço de início do programa
+ORG 100h
 
 START:
-
-    LD A, 10    ; Carrega o valor 10 no registrador A
-
-    LD B, 5     ; Carrega o valor 5 no registrador B
-
-    ADD A, B    ; Soma os valores de A e B
-
-    ; Agora o resultado da soma está em A, você pode fazer o que quiser com ele
-
-    HALT        ; Para a execução do programa
-
-END START   ; Fim do programa
-
+    LD A, 1
+    CALL LOADING ; chame a subrotina LOADING
+    
+    JMP START    ; volta para a rotina principal
+    
+LOADING:
+    ADD A, 1     ; adiciona mais 1 ao registrador A
+    
+    RET          ; retorna o ponto de chamada(START) para fazer a porra do loop de novo
