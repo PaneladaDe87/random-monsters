@@ -18,10 +18,10 @@ jobs:
         run: sudo apt-get install z80asm
 
       - name: Assemble Z80 Code
-        run: z80asm -b test.asm -o test.gba
+        run: z80asm -b main.asm -o main.gba
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: test
-          path: test.gba
+          name: beta
+          path: main.gba
