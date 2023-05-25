@@ -18,29 +18,29 @@ MAIN_LOOP:
     JP      MAIN_LOOP
 
 DRAW_TEXT_LOOP:
-    LD      (HL),  A
+    LD      (HL),    A
     CP      $00
-    JR      Z,     END_DRAW_TEXT
-    ADD     A,     A
-    LD      DE,    $FE00
-    ADD     A,     E
-    LD      E,     A
-    LD      BC,    16
-    LD      HL,    (CHAR_PATTERNS)
+    JR      Z,       END_DRAW_TEXT
+    ADD     A,       A
+    LD      DE,      $FE00
+    ADD     A,       E
+    LD      E,       A
+    LD      BC,      16
+    LD      HL,      (CHAR_PATTERNS)
     
     DRAW_CHAR_LOOP:
-        LD  A,     (HL)
-        LD  DE,    A
+        LD  A,       (HL)
+        LD  DE,      A
         INC HL
         INC DE
         
-        LD  A,     (HL)
-        LD DE,     A
+        LD  A,       (HL)
+        LD DE,       A
         INC HL
         INC DE
         
         DEC BC
-        JR  NZ,    DRAW_CHAR_LOOP
+        JR  NZ,      DRAW_CHAR_LOOP
     
     INC HL
     JR      DRAW_TEXT_LOOP
@@ -54,5 +54,3 @@ CHAR_PATTERNS:
     
 STRING:
     DB      "LOL"
-    
-END
