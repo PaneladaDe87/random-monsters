@@ -7,12 +7,12 @@ LD          BC,      $2000
 LD          A,       $FF
 
 CLEAR_SCREEN_LOOP:
-    LD      (HL),  A
+    LD      (HL),    A
     INC     HL
     DEC     BC
-    LD      A,    B
+    LD      A,       B
     OR      C
-    JR      NZ,   CLEAR_SCREEN_LOOP
+    JR      NZ,      CLEAR_SCREEN_LOOP
     
 MAIN_LOOP:
     JP      MAIN_LOOP
