@@ -49,11 +49,8 @@ END_DRAW_TEXT:
     JR      $
     
 CHAR_PATTERNS:
-    DB      $FF,   $00,   $FF,  $00
-    DB      $FF,   $FF,   $FF,  $00
-    DB      $FF,   $00,   $FF,  $FF
-    
-CHAR_SIZE   EQU    $  -  CHAR_PATTERNS
+    DB      $FF,   $00,   $FF,  $00, $FF
+    DB      $FF,   $FF,   $FF,  $00, $00
     
 STRING:
     DB      "LOL"
