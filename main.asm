@@ -35,7 +35,7 @@ DRAW_TEXT_LOOP:
         INC DE
         
         LD  A,       (HL)
-        LD DE,       A
+        LD  DE,      A
         INC HL
         INC DE
         
@@ -54,3 +54,5 @@ CHAR_PATTERNS:
     
 STRING:
     DB      "LOL"
+    
+END
