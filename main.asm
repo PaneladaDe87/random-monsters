@@ -3,4 +3,5 @@ ORG 150h
 LD A, $50
 
 MAIN:
-    LD A, $75
+    INC A, $75
+    DEC A, $50
