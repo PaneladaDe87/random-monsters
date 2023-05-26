@@ -1,10 +1,9 @@
 ORG 150h
 
 LD A, $1
-press EQU "A"
+press EQU $0
 
 MAIN:
-    start EQU $0
     CP 0
     JR Z, NUMBER_ONE
     
