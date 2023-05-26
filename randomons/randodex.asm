@@ -28,6 +28,17 @@ INFO_PSYCODICK:
     status      DB "Catched"
     nature      DB "Domestic"
     
+INFO_MINHOCOM:
+    name        DB "Minhocom"
+    type_1      DB "Water"
+    type_2      DB "Ground"
+    height      DB "50 centimeter"
+    weight      DB "8 kilo"
+    gender      DB "Male"
+    effect      DB "None"
+    status      DB "Catched"
+    nature      DB "Domestic"
+    
 CHECK_KEY:
     exit        DB "A"
     description DB "B"
