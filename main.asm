@@ -1,7 +1,7 @@
 ORG 150h
 
-LD A, $1
-press DB $0
+LD A, $0
+press DB A
 
 MAIN:
     CP 0
@@ -10,4 +10,4 @@ MAIN:
     JR MAIN
     
 NUMBER_ONE:
-    LD A, $2
+    LD A, $1
