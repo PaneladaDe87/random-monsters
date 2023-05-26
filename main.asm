@@ -1,7 +1,7 @@
 ORG 150h
 
 LD A, $1
-press EQU $0
+press DB $0
 
 MAIN:
     CP 0
