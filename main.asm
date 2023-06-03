@@ -9,8 +9,8 @@ MAIN:
     JR MAIN
 
 START:
-    button_a EQU 0
-    button_b EQU 1
+    button_a equ 0
+    button_b equ 1
     
     WAIT_FOR_BUTTON:
         IN A
