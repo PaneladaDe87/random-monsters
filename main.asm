@@ -9,11 +9,11 @@ MAIN:
     JR MAIN
 
 START:
-    button_a equ 0
-    button_b equ 1
+    BUTTON_A equ 0
+    BUTTON_B equ 1
     
     WAIT_FOR_BUTTON:
-        IN A
+        IN A, ($FF)
         
         AND %00000011
         CP %00000001
