@@ -9,8 +9,8 @@ MAIN:
     JR MAIN
 
 START:
-    BUTTON_A equ 0
-    BUTTON_B equ 1
+    button_a SET 0
+    button_b SET 1
     
     WAIT_FOR_BUTTON:
         IN A, ($FF)
