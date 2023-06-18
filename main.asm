@@ -2,6 +2,8 @@ ORG 150h
 
 LD A, $0
 
+ADD A, 1
+
 MAIN:
     CP 0
     JR Z, START
@@ -9,9 +11,6 @@ MAIN:
     JR MAIN
 
 START:
-    button_a SET 0
-    button_b SET 1
-    
     WAIT_FOR_BUTTON:
         IN A, ($FF)
         
