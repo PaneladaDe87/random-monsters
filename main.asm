@@ -5,16 +5,27 @@ ADD A, 1
 
 DB NOTE_A
 DB NOTE_B
+DB NOTE_C
+DB BPM
 
 NOTE_A:
-  LD HL, 1
+    LD HL, 1
 
 NOTE_B:
-  LD HL, 2
+    LD HL, 2
+
+NOTE_C:
+    LD HL, 3
+
+BPM:
+    LD HL, 2
 
 MUSIC_DATA:
+    DB BPM
     DB NOTE_A
     DB NOTE_B
+    DB NOTE_B
+    DB NOTE_A
     DB 0
 
 MAIN:
