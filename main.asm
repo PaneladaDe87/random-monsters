@@ -18,7 +18,7 @@ NOTE_C:
     LD HL, 3
 
 BPM:
-    LD HL, 2
+    LD HL, 1
 
 MUSIC_DATA:
     DB BPM
@@ -34,6 +34,9 @@ MAIN:
     
     JR MAIN
 
+MUSIC_PLAY:
+    DB BPM
+
 START:
     WAIT_FOR_BUTTON:
         IN A, ($FF)
@@ -47,3 +50,5 @@ START:
         
     INTRO:
         LD A, 0
+
+        CALL MUSIC_PLAY
