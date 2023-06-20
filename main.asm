@@ -1,7 +1,6 @@
 ORG 150h
 
 LD A, $0
-
 ADD A, 1
 
 MAIN:
