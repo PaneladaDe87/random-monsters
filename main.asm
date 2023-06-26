@@ -3,10 +3,8 @@ ORG 150h
 LD A, $0
 ADD A, 1
 
-DB NOTE_A
-DB NOTE_B
-DB NOTE_C
-DB BPM
+NOTE_NULL:
+    LD HL, 0
 
 NOTE_A:
     LD HL, 1
@@ -17,15 +15,23 @@ NOTE_B:
 NOTE_C:
     LD HL, 3
 
-BPM:
-    LD HL, 1
-
 MUSIC_DATA:
-    DB BPM
     DB NOTE_A
+    DB NOTE_NULL
+    DB NOTE_NULL
     DB NOTE_B
+    DB NOTE_NULL
     DB NOTE_B
+    DB NOTE_NULL
     DB NOTE_A
+    DB NOTE_NULL
+    DB NOTE_NULL
+    DB NOTE_B
+    DB NOTE_NULL
+    DB NOTE_B
+    DB NOTE_NULL
+    DB NOTE_C
+    DB NOTE_NULL
     DB 0
 
 MAIN:
@@ -35,7 +41,7 @@ MAIN:
     JR MAIN
 
 MUSIC_PLAY:
-    DB BPM
+    CALL MUSIC_DATA
 
 START:
     WAIT_FOR_BUTTON:
