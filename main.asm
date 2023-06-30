@@ -4,34 +4,18 @@ LD A, $0
 ADD A, 1
 
 NOTE_NULL:
-    LD HL, 0
+    LD HL, (0)
 
 NOTE_A:
-    LD HL, 1
+    LD HL, (1)
 
 NOTE_B:
-    LD HL, 2
+    LD HL, (2)
 
 NOTE_C:
-    LD HL, 3
+    LD HL, (3)
 
 MUSIC_DATA:
-    DB NOTE_A
-    DB NOTE_NULL
-    DB NOTE_NULL
-    DB NOTE_B
-    DB NOTE_NULL
-    DB NOTE_B
-    DB NOTE_NULL
-    DB NOTE_A
-    DB NOTE_NULL
-    DB NOTE_NULL
-    DB NOTE_B
-    DB NOTE_NULL
-    DB NOTE_B
-    DB NOTE_NULL
-    DB NOTE_C
-    DB NOTE_NULL
     DB 0
 
 MAIN:
