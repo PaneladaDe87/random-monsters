@@ -17,7 +17,9 @@ START:
     MENU:
         LD A, (0)
 
-        CP HL
+        DB "press START button to start"
+
+        CP B
         JR Z, MENU
         JR NZ, PLAY
 
