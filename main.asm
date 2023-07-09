@@ -1,14 +1,11 @@
 ORG 0x0000
 
+JP START
+
 START:
-    MUSIC:
-        NOTES:
-            CALL 0x0001
+    LD A, (0)
 
-    RESTART:
-        LD A, (0)
-
-        JP LOADING
+    JP LOADING
 
     LOADING:
         ADD A, (1)
@@ -19,3 +16,10 @@ START:
 
     MENU:
         LD A, (0)
+
+        CP HL
+        JR Z, MENU
+        JR NZ, PLAY
+
+    PLAY:
+        DB "in development..."
