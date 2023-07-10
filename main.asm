@@ -10,32 +10,32 @@ START:
 
         DB "press START button to start"
 
-        CP B
+        CP C
         JR Z, MENU
         JR NZ, PLAY
 
     PLAY:
+        LD D, 1
         LD C, 0
         CP D
         JR Z, PLAY
         JR NZ, WALK_RIGHT
 
-WALK_RIGHT:
-    ; move one tile to forward
-    ADD A, 1
-
 WALK_LEFT:
-    ; move one tile to behind
-    SUB A, 1
+    LD B, 1
+
+WALK_RIGHT:
+    LD B, 2
 
 WALK_UP:
-    ; move one tile to up
-    ADD A, 1
+    LD B, 3
 
 WALK_DOWN:
-    ; move one tile to down
-    SUB 1, 1
+    LD B, 4
 
-CHECK_BUTTON_PRESSED:
-    LD C, 0
-    LD D, 0
+IDLE:
+    LD B, 0
+
+CHECK_FOR_INPUT:
+    CP B
+    ADD A, D
