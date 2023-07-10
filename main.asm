@@ -15,11 +15,12 @@ START:
         JR NZ, PLAY
 
     PLAY:
+        LD D, 0
         LD E, 1
         LD C, 0
         CP D
         JR Z, PLAY
-        JR NZ, WALK_RIGHT
+        JR NZ, CHECK_INPUT
 
 WALK_LEFT:
     LD B, 1
@@ -36,6 +37,14 @@ WALK_DOWN:
 IDLE:
     LD B, 0
 
-CHECK_FOR_INPUT:
-    CP B
-    ADD A, E
+; Check a button if pressed
+; The player can move in 4 directions
+CHECK_INPUT:
+    ; Compare the register D value to walk
+    CP D
+    JR Z CHECK_INPUT
+
+    ; If the register D is one
+    CALL WALK_LEFT
+
+    ; I will stop here, for now
