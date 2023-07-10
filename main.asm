@@ -15,7 +15,7 @@ START:
         JR NZ, PLAY
 
     PLAY:
-        LD D, 1
+        LD E, 1
         LD C, 0
         CP D
         JR Z, PLAY
@@ -38,4 +38,4 @@ IDLE:
 
 CHECK_FOR_INPUT:
     CP B
-    ADD A, D
+    ADD A, E
