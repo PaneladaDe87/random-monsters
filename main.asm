@@ -42,7 +42,7 @@ IDLE:
 CHECK_INPUT:
     ; Compare the register D value to walk
     CP D
-    JR Z CHECK_INPUT
+    JR Z, CHECK_INPUT
 
     ; If the register D is one
     CALL WALK_LEFT
