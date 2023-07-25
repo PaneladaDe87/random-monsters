@@ -90,16 +90,27 @@ RANDOMON_BATTLE:
 
     ; Shinto battle logic
     SHINTO:
-        LD A, 5
+        SHINTO_HEALTH:
+            LD A, 5
 
-        CP A
-        JR Z, SHINTO
+            CP A
+            JR Z, SHINTO
 
-        CP 5
-        DB "Shinto health is full"
+            CP 5
+            DB "Shinto health is full"
 
-        CP 3
-        DB "Shinto health is half"
+            CP 3
+            DB "Shinto health is half"
 
-        CP 0
-        DB "Shinto health is empty"
+            CP 0
+            DB "Shinto health is empty"
+
+        SHINTO_MOVES:
+            CALL ATTACK_SEED
+
+; Seed is a base for semi-random number selector
+; Used in games like minecraft(the semi-perfect game)
+; The seed in this game is for specific cases
+
+ATTACK_SEED:
+    LD L, 48
