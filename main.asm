@@ -90,6 +90,8 @@ RANDOMON_BATTLE:
 
     ; Shinto battle logic
     SHINTO:
+        CALL SHINTO_HEALTH
+
         SHINTO_HEALTH:
             LD A, 5
 
@@ -112,10 +114,45 @@ RANDOMON_BATTLE:
         SHINTO_RAG:
             CALL RAG_SEED
 
+        SHINTO_PUNCH:
+            DB "Shinto used PUNCH"
+            SUB A, 2
+            RET
+
+        SHINTO_BITE:
+            DB "Shinto used BITE"
+            SUB A, 3
+            RET
+
+        SHINTO_DODGE:
+            DB "Shinto used DODGE"
+            RET
+
+        SHINTO_HEAL:
+            DB "Shinto used HEAL"
+            ADD A, 1
+            RET
+
+
 ; Seed is a base for semi-random number selector
 ; Used in games like minecraft(the semi-perfect game)
 ; The seed in this game is for specific cases
 
 RAG_SEED:
     LD L, 4
+    CP L
+    JR Z, RAG_SEED
+
+    CP 1
+    JR Z, SHINTO_PUNCH
+
+    CP 2
+    JR Z, SHINTO_BITE
+
+    CP 3
+    JR Z, SHINTO_DODGE
+
+    CP 4
+    JR Z, SHINTO_HEAL
+
     RET
