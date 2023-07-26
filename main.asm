@@ -105,12 +105,17 @@ RANDOMON_BATTLE:
             CP 0
             DB "Shinto health is empty"
 
-        SHINTO_MOVES:
-            CALL ATTACK_SEED
+        ; RAG or Random Action Group
+        ; Is the action group, allow the randomon dodge, attack, etc...
+        ; Each randomon can use just 4 RAG's
+
+        SHINTO_RAG:
+            CALL RAG_SEED
 
 ; Seed is a base for semi-random number selector
 ; Used in games like minecraft(the semi-perfect game)
 ; The seed in this game is for specific cases
 
-ATTACK_SEED:
-    LD L, 48
+RAG_SEED:
+    LD L, 4
+    RET
