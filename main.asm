@@ -92,6 +92,14 @@ RANDOMON_BATTLE:
     SHINTO:
         CALL SHINTO_HEALTH
 
+    ; RAG or Random Action Group
+    ; Is the action group, allow the randomon dodge, attack, etc...
+    ; Each randomon can use just 4 RAG's
+
+    SHINTO_RAG:
+        JP RAG_SEED
+
+
 SHINTO_HEALTH:
     LD A, 5
 
@@ -106,14 +114,6 @@ SHINTO_HEALTH:
 
     CP 0
     DB "Shinto health is empty"
-
-
-; RAG or Random Action Group
-; Is the action group, allow the randomon dodge, attack, etc...
-; Each randomon can use just 4 RAG's
-
-SHINTO_RAG:
-    JP RAG_SEED
 
 SHINTO_PUNCH:
     DB "Shinto used PUNCH"
