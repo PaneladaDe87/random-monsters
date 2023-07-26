@@ -92,46 +92,47 @@ RANDOMON_BATTLE:
     SHINTO:
         CALL SHINTO_HEALTH
 
-        SHINTO_HEALTH:
-            LD A, 5
+SHINTO_HEALTH:
+    LD A, 5
 
-            CP A
-            JR Z, SHINTO
+    CP A
+    JR Z, SHINTO
 
-            CP 5
-            DB "Shinto health is full"
+    CP 5
+    DB "Shinto health is full"
 
-            CP 3
-            DB "Shinto health is half"
+    CP 3
+    DB "Shinto health is half"
 
-            CP 0
-            DB "Shinto health is empty"
+    CP 0
+    DB "Shinto health is empty"
 
-        ; RAG or Random Action Group
-        ; Is the action group, allow the randomon dodge, attack, etc...
-        ; Each randomon can use just 4 RAG's
 
-        SHINTO_RAG:
-            CALL RAG_SEED
+; RAG or Random Action Group
+; Is the action group, allow the randomon dodge, attack, etc...
+; Each randomon can use just 4 RAG's
 
-        SHINTO_PUNCH:
-            DB "Shinto used PUNCH"
-            SUB A, 2
-            RET
+SHINTO_RAG:
+    JP RAG_SEED
 
-        SHINTO_BITE:
-            DB "Shinto used BITE"
-            SUB A, 3
-            RET
+SHINTO_PUNCH:
+    DB "Shinto used PUNCH"
+    SUB A, 2
+    RET
 
-        SHINTO_DODGE:
-            DB "Shinto used DODGE"
-            RET
+SHINTO_BITE:
+    DB "Shinto used BITE"
+    SUB A, 3
+    RET
 
-        SHINTO_HEAL:
-            DB "Shinto used HEAL"
-            ADD A, 1
-            RET
+SHINTO_DODGE:
+    DB "Shinto used DODGE"
+    RET
+
+SHINTO_HEAL:
+    DB "Shinto used HEAL"
+    ADD A, 1
+    RET
 
 
 ; Seed is a base for semi-random number selector
