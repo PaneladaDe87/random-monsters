@@ -104,6 +104,8 @@ RANDOMON_BATTLE:
             ; The RAG power is like the elixir from Clash Royale
             ; Each randomon can have 10 RAG power or lower
 
+            LD A', 10
+
             CP A'
             JR Z, SHINTO_RAG_POWER
 
@@ -150,8 +152,8 @@ SHINTO_DODGE:
 
 SHINTO_HEAL:
     DB "Shinto used HEAL"
-    ADD A, 1
-    SUB A', 2
+    ADD A, 2
+    ADD A', 1
     RET
 
 ; Seed is a base for semi-random number selector
