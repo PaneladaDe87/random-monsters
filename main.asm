@@ -99,6 +99,22 @@ RANDOMON_BATTLE:
     SHINTO_RAG:
         JP RAG_SEED
 
+        SHINTO_RAG_POWER:
+            ; Compare the RAG power
+            ; The RAG power is like the elixir from Clash Royale
+            ; Each randomon can have 10 RAG power or lower
+
+            CP A'
+            JR Z, SHINTO_RAG_POWER
+
+            CP 10
+            DB "Shinto have full RAG power"
+
+            CP 5
+            DB "Shinto have half RAG power"
+
+            CP 0
+            DB "Shinto have null RAG power"
 
 SHINTO_HEALTH:
     LD A, 5
@@ -118,22 +134,25 @@ SHINTO_HEALTH:
 SHINTO_PUNCH:
     DB "Shinto used PUNCH"
     SUB A, 2
+    SUB A', 2
     RET
 
 SHINTO_BITE:
     DB "Shinto used BITE"
     SUB A, 3
+    SUB A', 4
     RET
 
 SHINTO_DODGE:
     DB "Shinto used DODGE"
+    SUB A', 1
     RET
 
 SHINTO_HEAL:
     DB "Shinto used HEAL"
     ADD A, 1
+    SUB A', 2
     RET
-
 
 ; Seed is a base for semi-random number selector
 ; Used in games like minecraft(the semi-perfect game)
