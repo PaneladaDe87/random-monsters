@@ -94,7 +94,7 @@ RANDOMON_BATTLE:
 
     ; RAG or Random Action Group
     ; Is the action group, allow the randomon dodge, attack, etc...
-    ; Each randomon can use just 4 RAG's
+    ; Each randomon can use just 4 RAGs
 
     SHINTO_RAG:
         JP RAG_SEED
@@ -104,9 +104,9 @@ RANDOMON_BATTLE:
             ; The RAG power is like the elixir from Clash Royale
             ; Each randomon can have 10 RAG power or lower
 
-            LD A', 10
+            LD A, 10
 
-            CP A'
+            CP A
             JR Z, SHINTO_RAG_POWER
 
             CP 10
