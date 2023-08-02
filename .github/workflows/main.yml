@@ -18,10 +18,10 @@ jobs:
         run: sudo apt-get install z80asm
 
       - name: Assemble Z80 Code
-        run: z80asm -b main.asm -o main.bin
+        run: z80asm source/setup.asm -o RandomonGame.bin
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
           name: beta
-          path: main.bin
+          path: RandomonGame.bin
